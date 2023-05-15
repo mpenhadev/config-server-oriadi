@@ -4,8 +4,8 @@ server:
 spring:
   application:
     name: user-service
-  main:
-    lazy-initialization: true
+#   main:
+#     lazy-initialization: true
   jmx:
     enabled: false
   datasource:
