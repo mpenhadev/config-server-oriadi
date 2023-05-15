@@ -13,10 +13,6 @@ spring:
         name: auth_exchange
       routing:
         key: auth_routing_key
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
   datasource:
     url: jdbc:postgresql://0.0.0.0:5432/db-user
     username: celodev
@@ -31,5 +27,8 @@ eureka:
   sql:
     init:
       mode: always
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
       
