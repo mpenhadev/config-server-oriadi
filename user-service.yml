@@ -4,10 +4,19 @@ server:
 spring:
   application:
     name: user-service
-#   main:
-#     lazy-initialization: true
   jmx:
     enabled: false
+  rabbitmq:
+      addresses: amqps://iejdfvfi:akgz0vZvsiZqNmobXeCxSRS_9fVKWny1@puffin.rmq2.cloudamqp.com/iejdfvfi
+      queue: auth
+      exchange:
+        name: auth_exchange
+      routing:
+        key: auth_routing_key
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
   datasource:
     url: jdbc:postgresql://0.0.0.0:5432/db-user
     username: celodev
@@ -22,10 +31,5 @@ spring:
   sql:
     init:
       mode: always
+
       
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/
